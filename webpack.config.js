@@ -24,7 +24,7 @@ module.exports = {
         components: path.resolve(__dirname, 'src/components'),
         shared: path.resolve(__dirname, 'src/shared'),
         helpers: path.resolve(__dirname, 'src/helpers'),
-        icons: path.resolve(__dirname, 'src/icons')
+        icons: path.resolve(__dirname, 'src/icons'),
     },
     extensions: ['.js']
   },

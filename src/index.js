@@ -1,30 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDom from "react-dom";
-import AceEditor from "react-ace";
-import "ace-builds/src-noconflict/mode-markdown";
-import './ace-custom-theme.css'
-const marked = require('marked');
+import TextEditor from "components/TextEditor";
+import MarkdownPreview from "components/MarkdownPreview";
+import { MarkdownProvider } from "helpers/MarkdownContext";
 
-marked.setOptions({
-  breaks: true,
-  smartLists: true,
-  tables: true,
-})
-
-const App = (props) => {
-  const [markdown, setMarkdown] = useState("");
+const App = () => {
   return (
-    <div>
-      <AceEditor
-        mode="markdown"
-        theme="textmate"
-        value={markdown}
-        wrapEnabled={true}
-        onChange={setMarkdown}
-        width={"100%"}
-      />
-      <div dangerouslySetInnerHTML={{ __html: marked(markdown) }}/>
-    </div>
+    <MarkdownProvider>
+      <TextEditor/>
+      <MarkdownPreview/>
+    </MarkdownProvider>
   );
 };
 

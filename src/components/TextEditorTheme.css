@@ -1,0 +1,53 @@
+.ace_editor {
+  font-family: "Jetbrains Mono";
+  line-height: 1.75em;
+  font-size: 14px;
+  background-color: #fff;
+  color: #565869;
+}
+
+.ace_gutter {
+  background-color: #fff !important;
+  border-right: 1px solid #eee;
+  color: #ced0d6 !important;
+}
+
+.ace_gutter-active-line {
+  background-color: #f8f8f8 !important;
+  color: #3c3d49;
+  font-weight: bold;
+}
+
+.ace_fold {
+  background: #ced4df !important;
+  border: none !important;
+}
+
+.ace_marker-layer .ace_active-line {
+  background: #f8f8f8 !important;
+}
+
+
+/* Color Code Theme */
+.ace_heading {
+  color: #565869 !important;
+  font-weight: bold;
+}
+
+.ace_list {
+  color: #565869 !important;
+  font-style: italic;
+}
+
+.ace_meta.ace_tag {
+  color: #06960e !important;
+}
+
+.ace_comment {
+  color: #c4c4c4 !important;
+}
+
+
+/* color to be fixed in the future
+___, string, code
+ */
