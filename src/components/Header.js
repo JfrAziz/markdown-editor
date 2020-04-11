@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import FileSaver from 'file-saver';
 import MarkdownContext from 'helpers/MarkdownContext';
-import {Download as DownloadIcon} from 'icons/Download'
+import {FIDownload} from 'icons/Icon'
 import 'components/Header.scss'
 
 const Header = () => {
@@ -26,8 +26,8 @@ const Header = () => {
       <div className="header-right">
         <nav>
             <button onClick={()=>Download()}>
-              <DownloadIcon width={16} height={16}/>
-              <span>Download Markdown</span>+
+              <FIDownload/>
+              <span>Download Markdown</span>
             </button>
         </nav>
       </div>

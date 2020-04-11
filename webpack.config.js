@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack')
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-module.exports = {
+module.exports = (env, argv) => ({
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'public'),
@@ -35,11 +35,11 @@ module.exports = {
     new BundleAnalyzerPlugin(),
     new webpack.ContextReplacementPlugin(
       /highlight\.js\/lib\/languages$/,
-      new RegExp(`^./(${['bash', 'css', 'javascript', 'json', 'xml', 'plaintext'].join('|')})$`)
+      new RegExp(`^./(${['bash', 'css', 'javascript', 'json', 'java', 'go', 'php'].join('|')})$`)
     ),
   ],
-  devtool: 'cheap-module-eval-source-map',
+  devtool: argv.mode === 'production' ? '' : 'cheap-module-eval-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'public')
   }
-};
+});

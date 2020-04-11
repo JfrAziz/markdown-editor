@@ -34,7 +34,7 @@ module.exports = {
   plugins : [ 
     new webpack.ContextReplacementPlugin(
       /highlight\.js\/lib\/languages$/,
-      new RegExp(`^./(${['bash', 'css', 'javascript', 'json', 'xml', 'plaintext'].join('|')})$`)
+      new RegExp(`^./(${['bash', 'css', 'javascript', 'json', 'java','go', 'php'].join('|')})$`)
     ),
   ],
   devtool: '',

@@ -5,7 +5,7 @@ import 'components/theme/markdown.scss'
 import 'components/theme/atom-one-dark.scss'
 const marked = require('marked');
 
-const languages = ['bash', 'css', 'javascript', 'json', 'xml', 'plaintext'] 
+const languages = ['bash', 'css', 'javascript', 'json', 'java','go', 'php'] 
 
 languages.forEach((name)=>{
   const lang = require(`highlight.js/lib/languages/${name}`)

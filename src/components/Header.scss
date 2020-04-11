@@ -52,3 +52,9 @@ header {
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .header-right button span {
+    display: none;
+  }
+}

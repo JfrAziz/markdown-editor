@@ -5,16 +5,20 @@ import Header from 'components/Header'
 import { MarkdownProvider } from "helpers/MarkdownContext";
 import "app/App.scss"
 
-const MarkdownContainer = (props) => (
-  <div className={"markdown-container "+props.type}>
-    <div className="markdown-label" >
-      {props.type}
+const MarkdownContainer = props => {
+  return (
+    <div className={"markdown-container "+props.type}>
+      <div className="markdown-header">
+        <div className="markdown-label">
+          {props.type}
+        </div>
+      </div>
+      <div className={"markdown-wrapper "+props.type}>
+        {props.children}
+      </div>
     </div>
-    <div className={"markdown-wrapper "+props.type}>
-      {props.children}
-    </div>
-  </div>
-)
+  )
+}
 
 
 const App = () => {
