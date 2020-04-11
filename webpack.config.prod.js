@@ -1,6 +1,5 @@
 const path = require('path');
 var webpack = require('webpack');
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: 'production',
@@ -33,7 +32,6 @@ module.exports = {
     extensions: ['.js']
   },
   plugins : [ 
-    new BundleAnalyzerPlugin(),
     new webpack.ContextReplacementPlugin(
       /highlight\.js\/lib\/languages$/,
       new RegExp(`^./(${['bash', 'css', 'javascript', 'json', 'xml', 'plaintext'].join('|')})$`)
