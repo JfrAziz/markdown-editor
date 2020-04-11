@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack')
 
 module.exports = {
   entry: './src/index.js',
@@ -14,8 +15,8 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
@@ -25,9 +26,16 @@ module.exports = {
         shared: path.resolve(__dirname, 'src/shared'),
         helpers: path.resolve(__dirname, 'src/helpers'),
         icons: path.resolve(__dirname, 'src/icons'),
+        app: path.resolve(__dirname, 'src/app')
     },
     extensions: ['.js']
   },
+  plugins: [
+    new webpack.ContextReplacementPlugin(
+      /highlight\.js\/lib\/languages$/,
+      new RegExp(`^./(${['bash', 'css', 'javascript', 'json', 'xml', 'plaintext'].join('|')})$`)
+    ),
+  ],
   devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'public')

@@ -1,4 +1,5 @@
 const path = require('path');
+var webpack = require('webpack');
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
@@ -16,8 +17,8 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
@@ -26,12 +27,17 @@ module.exports = {
         components: path.resolve(__dirname, 'src/components'),
         shared: path.resolve(__dirname, 'src/shared'),
         helpers: path.resolve(__dirname, 'src/helpers'),
-        icons: path.resolve(__dirname, 'src/icons')
+        icons: path.resolve(__dirname, 'src/icons'),
+        app: path.resolve(__dirname, 'src/app')
     },
     extensions: ['.js']
   },
   plugins : [ 
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin(),
+    new webpack.ContextReplacementPlugin(
+      /highlight\.js\/lib\/languages$/,
+      new RegExp(`^./(${['bash', 'css', 'javascript', 'json', 'xml', 'plaintext'].join('|')})$`)
+    ),
   ],
   devtool: '',
   devServer: {

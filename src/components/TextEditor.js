@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import MarkdownContext from "helpers/MarkdownContext";
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-markdown";
-import 'components/TextEditorTheme.css'
+import 'components/theme/text-editor.scss'
 
 const TextEditor = () => {
   const {markdown, setMarkdown} = useContext(MarkdownContext)
@@ -14,6 +14,7 @@ const TextEditor = () => {
           onChange={setMarkdown}
           showPrintMargin={false}
           width={"100%"}
+          height={"100%"}
         />
 }
 

@@ -1,0 +1,52 @@
+$border-color : #b4bce97e;
+
+.container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 10px;
+}
+
+.editor-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  overflow: hidden;
+}
+
+.markdown-container {
+  flex: 1;
+  box-sizing: border-box;
+  border: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.markdown-container.preview {
+  border-left: none;
+  overflow: hidden;
+}
+
+.markdown-label {
+  border-bottom: 1px solid $border-color;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+  color: #999;
+  font-size: 0.75em;
+  user-select: none;
+}
+
+.markdown-wrapper {
+  flex: 1;
+}
+
+.markdown-wrapper.preview {
+  overflow: scroll;
+}
