@@ -1,6 +1,7 @@
 import React from 'react'
 import TextEditor from "components/TextEditor";
 import MarkdownPreview from "components/MarkdownPreview";
+import Header from 'components/Header'
 import { MarkdownProvider } from "helpers/MarkdownContext";
 import "app/App.scss"
 
@@ -20,9 +21,7 @@ const App = () => {
   return (
     <MarkdownProvider>
       <div className="container">
-        <header>
-          test
-        </header>
+        <Header/>
         <div className="editor-container">
           <MarkdownContainer type="editor">
             <TextEditor/>

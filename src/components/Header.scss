@@ -1,0 +1,54 @@
+header {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.header-left {
+  flex: 1;
+  label {
+    font-size: 0.7rem;
+    font-family: "Fira Code", monospace;
+    color: #888;
+    user-select: none;
+  }
+  .document-name input {
+    width: 90%;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    font-family: "Roboto", sans-serif;
+    color: #333;
+  }
+}
+
+.header-right {
+  nav {
+    display: flex;
+  }
+  button {
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background-color: #3f91d4;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    &:hover {
+      background-color: #3c89c9;
+    }
+    span {
+      padding-left: 10px;
+    }
+  }
+}
