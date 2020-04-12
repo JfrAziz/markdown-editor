@@ -26,10 +26,6 @@ $border-color : #b4bce97e;
   flex-direction: column;
 }
 
-.hide {
-  display: none;
-}
-
 .markdown-container.preview {
   border-left: none;
   overflow: hidden;
@@ -50,6 +46,10 @@ $border-color : #b4bce97e;
     border-radius: 3px;
     display: flex;
     padding: 5px;
+    &.btn-preview {
+      display: none;
+      padding: 5px 20px;
+    }
   }
 }
 
@@ -65,6 +65,11 @@ $border-color : #b4bce97e;
 }
 
 .markdown-wrapper.preview {
+  overflow: scroll;  
+}
+
+.modal-preview {
+  height: 100%;
   overflow: scroll;
 }
 
@@ -72,4 +77,15 @@ $border-color : #b4bce97e;
   .editor-container .preview {
     display: none;
   }
+  .markdown-header {
+    button {
+      &.btn-preview {
+        display: block;
+      }
+      &.btn-maximize {
+        display: none;
+      }
+    }
+  }
+  
 }

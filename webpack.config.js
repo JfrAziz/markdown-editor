@@ -35,7 +35,7 @@ module.exports = (env, argv) => ({
     new BundleAnalyzerPlugin(),
     new webpack.ContextReplacementPlugin(
       /highlight\.js\/lib\/languages$/,
-      new RegExp(`^./(${['bash', 'css', 'javascript', 'json', 'java', 'go', 'php'].join('|')})$`)
+      new RegExp(`^./(${['bash', 'css', 'javascript', 'json', 'java', 'go', 'php','plaintext'].join('|')})$`)
     ),
   ],
   devtool: argv.mode === 'production' ? '' : 'cheap-module-eval-source-map',

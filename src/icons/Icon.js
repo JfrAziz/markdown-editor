@@ -26,7 +26,7 @@ const FIDownload = (props) => (
   </Icons>
 );
 
-const FIMaximize = (props) => (
+const FIMinimize = (props) => (
   <Icons {...props}>
     <polyline points="4 14 10 14 10 20"></polyline>
     <polyline points="20 10 14 10 14 4"></polyline>
@@ -35,7 +35,7 @@ const FIMaximize = (props) => (
   </Icons>
 );
 
-const FIMinimize = (props) => (
+const FIMaximize = (props) => (
   <Icons {...props}>
     <polyline points="15 3 21 3 21 9"></polyline>
     <polyline points="9 21 3 21 3 15"></polyline>
@@ -44,6 +44,14 @@ const FIMinimize = (props) => (
   </Icons>
 );
 
+const FIX = (props) => (
+  <Icons {...props}>
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </Icons>
+);
+
 export { FIDownload };
 export { FIMaximize };
 export { FIMinimize };
+export { FIX }

@@ -54,7 +54,10 @@ header {
 }
 
 @media only screen and (max-width: 600px) {
-  .header-right button span {
-    display: none;
+  .header-right button {
+    border-radius: 30px;
+    span {
+      display: none;
+    }
   }
 }
