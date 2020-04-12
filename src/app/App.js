@@ -3,14 +3,14 @@ import TextEditor from "components/TextEditor";
 import MarkdownPreview from "components/MarkdownPreview";
 import Header from 'components/Header'
 import Modal from 'components/Modal'
-import { FIMaximize } from 'icons/Icon'
+import { FIMaximize, FIEye } from 'icons/Icon'
 import { MarkdownProvider } from "helpers/MarkdownContext";
 import "app/App.scss"
 
 const MarkdownContainer = props => {
-  const btnPreview = <button className="btn-preview" onClick={props.onPreview}>Preview</button>
+  const btnPreview = <button className="btn-preview" onClick={props.onPreview}><FIEye/></button>
   return (
-    <div className={"markdown-container "+props.type}>
+    <div className={"markdown-container "+props.type}>  
       <div className="markdown-header">
         <div className="markdown-label">
           {props.type}

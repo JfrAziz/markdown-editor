@@ -3,10 +3,13 @@ const webpack = require('webpack')
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = (env, argv) => ({
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+  },
   output: {
     path: path.join(__dirname, 'public'),
-    filename: 'main.bundle.js'
+    chunkFilename: "[name].js",
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -18,7 +21,14 @@ module.exports = (env, argv) => ({
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
-      }
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+        }
+      },
     ]
   },
   resolve: {
@@ -27,7 +37,8 @@ module.exports = (env, argv) => ({
         shared: path.resolve(__dirname, 'src/shared'),
         helpers: path.resolve(__dirname, 'src/helpers'),
         icons: path.resolve(__dirname, 'src/icons'),
-        app: path.resolve(__dirname, 'src/app')
+        app: path.resolve(__dirname, 'src/app'),
+        assets: path.resolve(__dirname,'src/assets')
     },
     extensions: ['.js']
   },

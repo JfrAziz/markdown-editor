@@ -1,5 +1,7 @@
 import React from "react";
 
+// This icon is modified version of Feather Icon to use in this project
+
 const Icons = (props) => {
   return (
     <svg
@@ -51,7 +53,15 @@ const FIX = (props) => (
   </Icons>
 );
 
+const FIEye = (props) => (
+  <Icons {...props}>
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+    <circle cx="12" cy="12" r="3"></circle>
+  </Icons>
+);
+
 export { FIDownload };
 export { FIMaximize };
 export { FIMinimize };
-export { FIX }
+export { FIX };
+export { FIEye }
