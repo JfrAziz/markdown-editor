@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import MarkdownContext from 'helpers/MarkdownContext';
-import hljs from 'highlight.js/lib/highlight';
+import hljs from 'highlight.js/lib/core';
 import 'components/theme/markdown.scss'
 import 'components/theme/atom-one-dark.scss'
 const marked = require('marked');
